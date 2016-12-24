@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>响应式HTML5视频播放器</title>
+    <meta name="Keyword" content="HTML5,CSS3,参考学习plyr.io播放器">
+    <meta name="Author" content="PhotoArtLife">
+    <meta name="Description" content="HTML5,CSS3,参考学习plyr.io播放器">
+    <link type="image/x-icon" rel="shortcut icon" href="http://kquanr.com/images/logo.ico">
+    <link rel="stylesheet" href="./css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/video-player.css">
+</head>
+<body>
+<figure>
+    <figcaption>自定义HTML5视频播放器</figcaption>
+    <div class="player">
+        <video poster="https://cdn.selz.com/plyr/1.5/View_From_A_Blue_Moon_Trailer-HD.jpg?v1" crossorigin="" class="plyr--setup">
+	        <!-- Video files -->
+	        <source src="https://cdn.selz.com/plyr/1.5/View_From_A_Blue_Moon_Trailer-HD.mp4" type="video/mp4">
+	        <source src="https://cdn.selz.com/plyr/1.5/View_From_A_Blue_Moon_Trailer-HD.webm" type="video/webm">
+	        <!-- Text track file -->
+	        <track kind="captions" label="English" srclang="en" src="https://cdn.selz.com/plyr/1.5/View_From_A_Blue_Moon_Trailer-HD.en.vtt" default="">
+	        <!-- Fallback for browsers that don't support the <video> element -->
+	        
+        </video>
+        <div class="controls">
+            <!-- 播放/暂停 -->
+            <a href="javascript:;" class="switch fa fa-play"></a>
+            
+            <!-- 进度条 -->
+            <div class="progress">
+                <div class="loaded"></div>
+                <div class="line"></div>
+                <div class="bar"></div>
+            </div>
+            <!-- 时间 -->
+            <div class="timer">
+                <span class="current">00:00:00</span> /
+                <span class="total">00:00:00</span>
+            </div>
+            <!-- 全屏 -->
+            <a href="javascript:;" class="expand fa fa-expand"></a>
+            <!-- 播放按钮切换 -->
+            <a href="javascript:;" class="playPause">
+                <i class="fa fa-play fa-SwitchVideo"></i>
+            </a>
+        </div>
+    </div>
+</figure>
+
+<script type="text/javascript" src="js/video.js"></script>
+</body>
+</html>
