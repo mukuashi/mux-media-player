@@ -1,26 +1,57 @@
-//ES5用法原生DOM自定义播放器
-var video = document.querySelector("video");
-var isPlay = document.querySelector(".switch");
-var expand = document.querySelector(".expand");
-var progress = document.querySelector(".progress");
-var loaded = document.querySelector(".progress > .loaded");
-var currPlayTime = document.querySelector(".timer > .current");
-var totalTime = document.querySelector(".timer > .total");
+/**
+ * Copyright (c) 2016 MIUI, All rights reseved.
+ * @fileoverview ES5用法原生DOM自定义播放器
+ * @author Mich | mukuashi@xiaomi.com
+ * @version 1.0 | 2016-12-22  // Initial version.
+ * @version 1.1 | 2016-12-26  // add play and pause icon
+ * 自定义播放器，用于chrome webkit内核的浏览器视频通用播放器demo
+ * 有空完善及兼容各种浏览器
+**/
+
+var video = document.querySelector("video"),
+    isPlay = document.querySelector(".switch"),
+    togglePlay = document.querySelector(".playPause"),
+    expand = document.querySelector(".expand"),
+    progress = document.querySelector(".progress"),
+    loaded = document.querySelector(".progress > .loaded"),
+    currPlayTime = document.querySelector(".timer > .current"),
+    totalTime = document.querySelector(".timer > .total");
 
 //当视频可播放的时候
 video.oncanplay = function(){
     //显示视频
     this.style.display = "block";
+    //显示播放与暂停按钮
+    togglePlay.classList.remove("loadingVideo");
     //显示视频总时长
     totalTime.innerHTML = getFormatTime(this.duration);
 };
+//视频中间按钮切换播放与暂停
+togglePlay.onclick = function(){
+    var videoToggleIcon = document.querySelector(".playPause > .fa-SwitchVideo");
+    if(video.paused) {
+        video.play();
+        videoToggleIcon.classList.add("videoPause");
+        isPlay.classList.toggle("fa-pause");
+        //videoToggleIcon.classList.toggle("fa-pause") //可以切换播放与暂停按钮，暂时没用
+    } else {
+        video.pause();
+        videoToggleIcon.classList.toggle("videoPause");
+        isPlay.classList.toggle("fa-play");
+        //videoToggleIcon.classList.remove("videoPause");  //remove方法也可换用
+    }
+};
 
-//播放按钮控制
+
+//下栏播放按钮控制
 isPlay.onclick = function(){
     if(video.paused) {
         video.play();
+        togglePlay.classList.toggle("loadingVideo");      
     } else {
         video.pause();
+        togglePlay.classList.toggle("loadingVideo"); 
+        this.classList.toggle("fa-plause");
     }
     this.classList.toggle("fa-pause");
 };
@@ -61,7 +92,7 @@ video.onended = function(){
     //视频恢复到播放开始状态
     video.currentTime = 0;
 };
-
+//时间进度处理
 function getFormatTime(time) {
     var time = time || 0;
 

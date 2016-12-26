@@ -18,7 +18,6 @@ figcaption {
 .player {
 	max-width: 100%;
     min-width: 360px;
-
 	margin: 0 auto;
 	background: #000 url(../images/loading.gif) center/300px no-repeat;
 	position: relative;
@@ -28,6 +27,7 @@ video {
 	width: 100%;
 	height: 100%;
 	margin: 0 auto;
+	cursor: pointer;
 }
 
 .controls {
@@ -126,29 +126,42 @@ video {
 	font-size: 14px;
 }
 /*播放按钮切换*/
-
-.videoPause {
-    display: none;
+.loadingVideo {
+	display: none;
 }
-.controls .playPause {
+.playPause {
 	position: absolute;
     z-index: 1;
-    top: 50%;
-    left: 45%;
-    width: 1.5em;
-    height: 1.5em;
+    top: 54%;
+    left: 50%;
+    width: 3em;
+    height: 3em;	
     transform: translate(-50%,-50%);
     -ms-touch-action: manipulation;
     touch-action: manipulation;
     -webkit-touch-action:manipulation;
+    cursor: pointer;
 }
-.controls .playPause .fa-SwitchVideo {	
+.playPause i.fa-SwitchVideo {	
     color: #fff;
-    font-size: 2em;
     background: #00bcd4;           
-    padding: 0.4em 0.6em;    
+    width: 3em;
+    height: 3em;
     border: 3px solid currentColor;
     border-radius: 100%;
     box-shadow: 0 1px 1px rgba(0,0,0,.15);
     transition: all .3s ease;
+}
+.playPause i.fa-SwitchVideo:before {
+    position: relative;
+    font-size: 1.8em;
+    top: 20%;
+    left: 34%; 
+}
+.playPause:focus,.playPause i:focus{
+	outline: none;
+	-webkit-tap-highlight-color: transparent;
+}
+.videoPause {
+    display: none;
 }

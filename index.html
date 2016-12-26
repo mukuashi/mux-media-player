@@ -3,6 +3,7 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>响应式HTML5视频播放器</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
     <meta name="Keyword" content="HTML5,CSS3,参考学习plyr.io播放器">
     <meta name="Author" content="PhotoArtLife">
     <meta name="Description" content="HTML5,CSS3,参考学习plyr.io播放器">
@@ -14,7 +15,7 @@
 <figure>
     <figcaption>自定义HTML5视频播放器</figcaption>
     <div class="player">
-        <video poster="https://cdn.selz.com/plyr/1.5/View_From_A_Blue_Moon_Trailer-HD.jpg?v1" crossorigin="" class="plyr--setup">
+        <video poster="https://cdn.selz.com/plyr/1.5/View_From_A_Blue_Moon_Trailer-HD.jpg?v1" crossorigin="" class="videoControls">
 	        <!-- Video files -->
 	        <source src="https://cdn.selz.com/plyr/1.5/View_From_A_Blue_Moon_Trailer-HD.mp4" type="video/mp4">
 	        <source src="https://cdn.selz.com/plyr/1.5/View_From_A_Blue_Moon_Trailer-HD.webm" type="video/webm">
@@ -40,10 +41,10 @@
             </div>
             <!-- 全屏 -->
             <a href="javascript:;" class="expand fa fa-expand"></a>
-            <!-- 播放按钮切换 -->
-            <a href="javascript:;" class="playPause">
-                <i class="fa fa-play fa-SwitchVideo"></i>
-            </a>
+        </div>
+        <!-- 播放按钮切换 -->
+        <div class="playPause loadingVideo">
+            <i class="fa fa-play fa-SwitchVideo"></i>
         </div>
     </div>
 </figure>
