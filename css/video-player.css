@@ -48,44 +48,28 @@ video {
 /*播放/暂停*/
 .controls .switch {
 	display: block;
-	width: 20px;
+	width: 4%;
 	height: 20px;
-	font-size: 20px;
+	font-size: 1.3em;
 	color: #FFF;
 	position: absolute;
 	top: 25%;
-    left: 1%;
+    left: 2%;
 }
 .controls .switch:hover {
 	color: blue;
 }
-
-/*全屏按钮*/
-.controls .expand {
-	display: block;
-	width: 20px;
-	height: 20px;
-	font-size: 20px;
-	color: #FFF;
-	position: absolute;
-	right: 1%;
-	top: 25%;
-}
-.controls .expand:hover {
-	color: blue;
-}
-
 /*进度条*/
 .controls .progress {
-	width: 75%;
+	width: 70%;
 	height: 10px;
 	border-radius: 3px;
 	overflow: hidden;
-	background-color: #555;
+	background-color: #fff;
 	cursor: pointer;
 	position: absolute;
 	top: 40%;
-    left: 4%;
+    left: 8%;
 }
 /*下载进度*/
 .controls .progress .loaded {
@@ -117,13 +101,28 @@ video {
 
 /*时间进度条*/
 .controls .timer {
+	width: 15%;
 	height: 20px;
 	line-height: 20px;
 	position: absolute;
-	right: 5.5%;
+	left: 79%;
 	top: 27%;
 	color: #FFF;
 	font-size: 14px;
+}
+/*全屏按钮*/
+.controls .expand {
+	display: block;
+	width: 3%;
+	height: 20px;
+	font-size: 20px;
+	color: #FFF;
+	position: absolute;
+	right: 2%;
+	top: 25%;
+}
+.controls .expand:hover {
+	color: blue;
 }
 /*当页面视频可以播放即是loading加载完成开始通过js在video标签上add这个class*/
 .loadingVideo {

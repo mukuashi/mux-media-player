@@ -26,21 +26,24 @@ video.oncanplay = function(){
     //显示视频总时长
     totalTime.innerHTML = getFormatTime(this.duration);
 };
-//视频中间按钮切换播放与暂停
-togglePlay.onclick = function(){
+//设置点击屏幕就让其播放或暂停
+video.onclick = function(){
     var videoToggleIcon = document.querySelector(".playPause > .fa-SwitchVideo");
     if(video.paused) {
         video.play();
-        videoToggleIcon.classList.add("videoPause");
-        isPlay.classList.toggle("fa-pause");
+        videoToggleIcon.classList.add("videoPause");        
         //videoToggleIcon.classList.toggle("fa-pause") //可以切换播放与暂停按钮，暂时没用
     } else {
         video.pause();
-        videoToggleIcon.classList.toggle("videoPause");
-        isPlay.classList.toggle("fa-pause");
+        videoToggleIcon.classList.toggle("videoPause");        
     }
+    isPlay.classList.toggle("fa-pause");
 };
 
+//视频中间按钮切换播放与暂停
+togglePlay.onclick = function(){
+    video.onclick();
+};
 
 //下栏播放按钮控制
 isPlay.onclick = function(){
