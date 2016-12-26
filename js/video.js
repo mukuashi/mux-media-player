@@ -37,20 +37,20 @@ togglePlay.onclick = function(){
     } else {
         video.pause();
         videoToggleIcon.classList.toggle("videoPause");
-        isPlay.classList.toggle("fa-play");
-        //videoToggleIcon.classList.remove("videoPause");  //remove方法也可换用
+        isPlay.classList.toggle("fa-pause");
     }
 };
 
 
 //下栏播放按钮控制
 isPlay.onclick = function(){
+    var videoToggleIcon = document.querySelector(".playPause > .fa-SwitchVideo");
     if(video.paused) {
         video.play();
-        togglePlay.classList.toggle("loadingVideo");      
+        videoToggleIcon.classList.add("videoPause");      
     } else {
         video.pause();
-        togglePlay.classList.toggle("loadingVideo"); 
+        videoToggleIcon.classList.remove("videoPause");
         this.classList.toggle("fa-plause");
     }
     this.classList.toggle("fa-pause");

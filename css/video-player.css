@@ -125,10 +125,15 @@ video {
 	color: #FFF;
 	font-size: 14px;
 }
-/*播放按钮切换*/
+/*当页面视频可以播放即是loading加载完成开始通过js在video标签上add这个class*/
 .loadingVideo {
 	display: none;
 }
+/*一个控制播放按钮显示与隐藏的div*/
+.videoPause {
+    display: none;
+}
+/*播放按钮切换*/
 .playPause {
 	position: absolute;
     z-index: 1;
@@ -161,7 +166,4 @@ video {
 .playPause:focus,.playPause i:focus{
 	outline: none;
 	-webkit-tap-highlight-color: transparent;
-}
-.videoPause {
-    display: none;
 }
