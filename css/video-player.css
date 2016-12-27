@@ -10,7 +10,7 @@ a {
 }
 
 figcaption {
-	font-size: 24px;
+	font-size: 16px;
 	text-align: center;
 	margin: 3% 0;
 }
@@ -61,7 +61,8 @@ video {
 }
 /*进度条*/
 .controls .progress {
-	width: 70%;
+	width: 65%;
+	max-width: 70%;
 	height: 10px;
 	border-radius: 3px;
 	overflow: hidden;
@@ -101,14 +102,15 @@ video {
 
 /*时间进度条*/
 .controls .timer {
-	width: 15%;
+	width: 10%;
+	min-width: 117px;
 	height: 20px;
 	line-height: 20px;
 	position: absolute;
 	left: 79%;
 	top: 27%;
 	color: #FFF;
-	font-size: 14px;
+	font-size: 0.8em;
 }
 /*全屏按钮*/
 .controls .expand {
