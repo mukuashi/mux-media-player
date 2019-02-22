@@ -1,0 +1,12 @@
+@import '../../styles/mixin';
+//
+.home {
+  > img {
+    max-width: 7rem;
+    margin: 13% 0 3rem;
+  }
+  width: 100%;
+  max-width: 50rem;
+  margin: 0 auto;
+  text-align: center;
+}
